@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Temple for CIT 160</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  
+  <body>
+    <header>
+      <h1>Week 4: Add Two Numbers</h1>
+      <h2>Danny Tindall</h2>
+    </header>
+    <main>
+      <h3>Add Two Numbers</h3>
+      <label>Enter Number One: <input type="text" id="number1"></label>
+      <label>Enter Number Two: <input type="text" id="number2"></label>
+      <label><button type="button" onclick="addNumbers()">Add Numbers</button></label>
+      <hr>
+      <p id="output"></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; Danny Tindall &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function addNumbers() {
+	        //INPUT - two numbers from the user
+	        let x = parseFloat(document.getElementById('number1').value);
+	        let y = parseFloat(document.getElementById('number2').value);
+	        //PROCESSING - adding the two numbers together
+	        let sum = x + y;
+	        //OUTPUT - the sum of both numbers
+	        document.getElementById('output').innerHTML = "The sum of " + x + " and " + y + " equals " + sum + "!";
+        }
+  </script>
+  </body>
+</html>
