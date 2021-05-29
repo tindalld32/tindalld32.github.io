@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Footwear Selection</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Week 6: Selecting the Proper Footwear</h1>
+      <h2>Danny Tindall</h2>
+    </header>
+    <main>
+      <h3>What should I put on my feet?</h3>
+      <label for="weather-select">What is the weather like?</label>
+
+        <select name="weather" id="weather-select">
+        <option value="">--Please choose an option--</option>
+        <option value="hot">Hot</option>
+        <option value="rain">Rain</option>
+        <option value="snow">Snow</option>
+        </select>
+      <label><button onclick="decideFootwear()">Tell me what I should put on!</button></label>
+      <hr>
+      <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; Danny Tindall &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script src=js/footwear.js></script>
+        
+    
+  </body>
+</html>

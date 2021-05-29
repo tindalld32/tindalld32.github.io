@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exam 1 Question 1</title>
+  </head>
+  <body>
+    <header>
+      <h1>Employee Pay</h1>
+      <h2>Danny Tindall</h2>
+    </header>
+    <main>
+      <h3>Calculating Employee Pay</h3>
+      <label>Input Regular Hours: <input type="text" id="regHours"></label>
+      <label>Input Overtime Hours: <input type="text" id="ovHours"></label>
+      <label><button onclick="calculatePay()">Calculate Total Pay</button></label>
+      <hr>
+      <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; Danny Tindall &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function calculatePay() {
+            //Input - amount of regular and overtime hours
+            let r = parseFloat(document.getElementById("regHours").value);
+            let o = parseFloat(document.getElementById("ovHours").value);
+
+            //Processing - calculating (regular hours x regular pay) + (overtime hours x overtime pay)
+
+            let regPay = r * 15
+            let ovPay = o * 22.5
+            let totalPay = 0.85 * (regPay + ovPay)
+
+            //Output - total calculated employee pay
+            document.getElementById("output").innerHTML = `The total amount of pay after tax is $${totalPay.toFixed(2)}.`
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exam 1 Question 2</title>
+    
+  </head>
+  <body>
+    <header>
+      <h1>Volume of a Round Cylinder</h1>
+      <h2>Danny Tindall</h2>
+    </header>
+    <main>
+      <h3>Calculating Volume of a Round Cylinder</h3>
+      <label>Input Radius of the Cylinder: <input type="text" id="radius"></label>
+      <label>Input Height of the Cylinder: <input type="text" id="height"></label>
+      <label><button onclick="calculateVol()">Calculate Volume</button></label>
+      <hr>
+      <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; Danny Tindall &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function calculateVol() {
+            //Input - amount radius and height of cylinder
+            let r = parseFloat(document.getElementById("radius").value);
+            let h = parseFloat(document.getElementById("height").value);
+
+            //Processing - calculating volume using V = pi r^2 h
+
+            let v = Math.PI * (r**2) * h
+
+            //Output - total calculated volume
+            document.getElementById("output").innerHTML = `The total volume of a cylinder with a radius of ${r} and a height of ${h} is ${v.toFixed(0)}`
+        }
+    </script>
+  </body>
+</html>

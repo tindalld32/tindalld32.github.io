@@ -20,53 +20,12 @@
       <label><button onclick="runTheNumbers()">Check Math</button></label>
       <hr>
       <p><span id="output"></span></p>
+      <p><span id="true"></span></p>
     </main>
     <footer>
         &copy;2021 &bull; Danny Tindall &bull; BYU-Idaho &bull; CIT 160
     </footer>
 
-    <!-- <script src="js/calculator.js"></script> -->
-    <script>
-        function runTheNumbers() {
-            // Input - two numbers, operator, and answer
-            let num1 = parseFloat(document.getElementById('num1').value);
-            let operator = document.getElementById('operator').value;
-            let num2 = parseFloat(document.getElementById('num2').value);
-            let answer = parseFloat(document.getElementById('answer').value);
-            let trueAnswer = 0;
-        
-            let message = ""
-            // Processing - calculate the answer, compare computed answer to user's answer
-            switch ('operator') {
-              case '+':
-                trueAnswer = num1 + num2
-                break;
-              case '-':
-                trueAnswer = num1 - num2
-                break;
-              case '*':
-                trueAnswer = num1 * num2
-                break;
-              case '/':
-                trueAnswer = num1 / num2
-                break;
-              default:
-                message = "Please enter a valid operator."
-
-              }
-            
-            if (trueAnswer == answer) {
-              message = "Correct! 🏆";
-            } else if (trueAnswer != answer) {
-              message = "Incorrect 😢";
-            }
-
-
-                    
-
-            // Output - state if answer is the same (correct) or not (incorrect)
-            document.getElementById('output').innerHTML = message;
-        }
-    </script>
+    <script src="js/calculator.js"></script>
   </body>
 </html>
