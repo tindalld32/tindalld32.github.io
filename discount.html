@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Discounts</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Week 7: Discounts</h1>
+      <h2>Danny Tindall</h2>
+    </header>
+    <main>
+      <h3>Should We Add A Discount?</h3>
+      <label>Customer Total: <input type="text" id="customerTotal"></label>
+      <label><button onclick="computeTotal()">Compute Total Price</button></label>
+      <hr>
+      <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; Danny Tindall &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function computeTotal() {
+            //Input - set variables for customer's total and the day of the week
+            var dayOfWeek = new Date().getDay();
+            var price = parseFloat(document.getElementById("customerTotal").value);
+            var totalPayment = 0
+
+            //Processing - if Tues/Weds add discount, if not, compute total with tax
+            if ((dayOfWeek == 2 || dayOfWeek == 3) && (price >= 50)) {
+                totalPayment = (price * 0.9) * 1.06
+            }
+            else {
+                totalPayment = price * 1.06
+            }
+            
+            //Output - give the customer's total price
+            document.getElementById("output").innerHTML = `Your total price is $${totalPayment.toFixed(2)}`
+
+        }
+    </script>
+  </body>
+</html>

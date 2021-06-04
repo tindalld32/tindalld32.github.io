@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Alarm</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Week 7: Alarm</h1>
+      <h2>Danny Tindall</h2>
+    </header>
+    <main>
+      <h3>Can You Sleep In?</h3>
+      <label><button onclick="alarm()">Tell me if I need to get up!</button></label>
+      <hr>
+      <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; Danny Tindall &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function alarm() {
+            // Input - introducing variables for processing the date
+            var now = new Date();
+            var month = now.getMonth();
+            var dayOfMonth = now.getDate();
+            var dayOfWeek = now.getDay();
+            var message = '';
+
+            //Processing - taking the day, month, etc to process if a wake alert needs to be issued
+            //var formatDate = month + dayOfMonth
+            
+            if ((month == 0 && dayOfMonth == 1) || (month == 6 && dayOfMonth == 4) || (month == 11 && dayOfMonth == 25)) {
+                message = "Sleep In"
+            }
+            else if (dayOfWeek == 0 || dayOfWeek == 6) {
+                message = "Sleep In"
+            }
+            else if (dayOfWeek >= 1 || dayOfWeek <= 5) {
+                message = "Get Up!"
+            } 
+
+            //Output
+            document.getElementById("output").innerHTML = message
+
+        }
+    </script>
+  </body>
+</html>
