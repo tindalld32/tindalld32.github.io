@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sum up the Odd Values</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Week 8: Sum up the Odd Values</h1>
+      <h2>Danny Tindall</h2>
+    </header>
+    <main>
+      <h3>Sum up the Odd Values</h3>
+      <label>Input a Number: <input type="text" id="num1" /></label>
+      <label><button onclick="sumOdds()">Give me the Sum</button></label>
+      <hr />
+      <p><span id="output"></span></p>
+    </main>
+    <footer>&copy;2021 &bull; Danny Tindall &bull; BYU-Idaho &bull; CIT 160</footer>
+
+    <script>
+      function sumOdds() {
+        //Input - user provided value
+        userNum = parseFloat(document.getElementById("num1").value);
+        let sum = 0;
+        //Processing - computing the odd numbers and adding them together
+        for (i = 1; i <= userNum; i += 2) {
+          sum += i;
+        }
+
+        //Output - give the sum of the odd numbers between 1 and userNum
+        document.getElementById("output").innerHTML = sum;
+      }
+    </script>
+  </body>
+</html>
