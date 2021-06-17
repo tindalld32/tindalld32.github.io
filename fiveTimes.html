@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Times Table using Repetition</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Week 9: 5 Times Table</h1>
+      <h2>Danny Tindall</h2>
+    </header>
+    <main>
+      <h3>Display 5 times table for 1 through 12</h3>
+      <!-- if you were to want to run the function from a button click, this is the code to use-->
+      <!-- <label><button onclick="timestable()">Start the Program</button></label> -->
+      <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; Danny Tindall &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function timestable() {
+            //Input - no input needed from user
+            let i = 1
+            let output = ""
+            
+            //Processing using repetition loop
+            while (i <= 12) {
+                n = i * 5;
+                output += `5 x ${i} = ${n}` + "<br>";
+                i++;
+            }
+
+            //Output - 5 times tables
+            document.getElementById("output").innerHTML = output
+
+
+        }
+
+        window.onload = timestable()
+    </script>
+    
+  </body>
+</html>
