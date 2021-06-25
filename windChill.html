@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Wind Chill</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Week 10: Wind Chill</h1>
+      <h2>Danny Tindall</h2>
+    </header>
+    <main>
+      <h3>Functions with Parameters - Wind Chill</h3>
+      <label>Temperature: <input type="text" id="temp"></label>
+      <label>Wind Speed: <input type="text" id="windSpeed"></label>
+      <label><button onclick="doInputOutput()">Calculate Wind Chill</button></label>
+      <hr>
+      <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; Danny Tindall &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function windChill(tempF, speed) {
+            return w = (35.74 + 0.6125 * tempF - 35.75 * Math.pow(speed, 0.16) + 0.4275 * tempF * Math.pow(speed, 0.16)).toFixed(2);
+        }
+
+        function doInputOutput() {
+        //Input - gather temperature and windspeed from user
+        let temperature = parseFloat(document.getElementById("temp").value)
+        let windspeed = parseFloat(document.getElementById("windSpeed").value)
+
+        //Processing - call the windChill function to compute wind chill in F
+        if (temperature <= 50 && windspeed >= 3) {
+            windchill = windChill (temperature, windspeed);
+        } else {
+            windchill = "Unable to compute wind chill with given temperature/wind speed values."
+        }
+
+        //Output - display calculated wind chill to user
+        document.getElementById("output").innerHTML = windchill
+        }
+    </script>
+  </body>
+</html>

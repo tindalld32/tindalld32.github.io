@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exam 2 Question 2</title>
+  </head>
+  <body>
+    <header>
+      <h1>Return True or False</h1>
+      <h2>Danny Tindall</h2>
+    </header>
+    <main>
+      <h3>Are x and y both > 5 or are their sums greater than 20?</h3>
+      <h3>Please input two numbers</h3>
+      <label>Number One: <input type="text" id="1"></label>
+      <label>Number Two: <input type="text" id="2"></label>
+      <label><button onclick="question2()">Start the Program</button></label>
+      <hr>
+      <div><span id="output"></span></div>
+    </main>
+    <footer>
+        &copy;2021 &bull; Danny Tindall &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function question2() {
+            //Input: user provides 2 variables
+            let x = parseFloat(document.getElementById('1').value);
+	        let y = parseFloat(document.getElementById('2').value);
+    
+            //Processing: decide if both numbers are greater than 5 OR sum is greater than 20
+            if ((x > 5 && y > 5) || (x + y > 20)) {
+                result = "True"
+            } else {
+                result = "False"
+            }
+
+            //Output: display the output - true or false
+            document.getElementById("output").innerHTML = result
+        }
+    </script>
+  </body>
+</html>

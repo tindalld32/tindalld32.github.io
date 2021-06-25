@@ -23,27 +23,15 @@
     <script>
         function alarm() {
             // Input - introducing variables for processing the date
-            var now = new Date();
-            var month = now.getMonth();
-            var dayOfMonth = now.getDate();
-            var dayOfWeek = now.getDay();
-            var message = '';
+
 
             //Processing - taking the day, month, etc to process if a wake alert needs to be issued
             //var formatDate = month + dayOfMonth
-            
-            if ((month == 0 && dayOfMonth == 1) || (month == 6 && dayOfMonth == 4) || (month == 11 && dayOfMonth == 25)) {
-                message = "Sleep In"
-            }
-            else if (dayOfWeek == 0 || dayOfWeek == 6) {
-                message = "Sleep In"
-            }
-            else if (dayOfWeek >= 1 || dayOfWeek <= 5) {
-                message = "Get Up!"
-            } 
+            let x = 2, y = 6, z = 5;
+            let result = (x == 2 ^ y > 5);
 
-            //Output
-            document.getElementById("output").innerHTML = message
+            document.getelementbyID("output").innerHTML = result
+
 
         }
     </script>

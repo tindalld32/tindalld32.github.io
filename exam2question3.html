@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exam 2 Question 3</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  
+  <body>
+    <header>
+      <h1>Provide 3 Numbers</h1>
+      <h2>Danny Tindall</h2>
+    </header>
+    <main>
+      <h3>Input a start, end and divisor</h3>
+      <p>Unfortunately, I have been unable to get this program to work</p>
+      <p>I have included it in case you provide partial credit but also so you can tell me what I'm doing wrong</p>
+      <p>Short of a general google search I have scoured w3 schools and barzee and while the information is obviously there, I have been unable to figure out my error.</p>
+      <label>Enter start: <input type="text" id="start"></label>
+      <label>Enter end: <input type="text" id="end"></label>
+      <label>Enter divisor: <input type="text" id="divisor"></label>
+      <label><button type="button" onclick="computeDivisors()">Compute</button></label>
+      <hr>
+      <p id="output"></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; Danny Tindall &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function computeDivisors() {
+	        //INPUT - three numbers from the user
+	        let i = parseFloat(document.getElementById('start').value);
+	        let y = parseFloat(document.getElementById('end').value);
+            let z = parseFloat(document.getElementById('divisor').value);
+            let n = 0
+	        //PROCESSING - finding the even divisors between the start and end
+            // I have included my two most recent attempts
+            //They are far from the only attempts I've made with various loops and commands
+
+	        for (; i <= y; i++) {
+                n = i % z;
+                if (n == 0) {
+                    output = i + ' ';
+                }
+                i++;
+            }
+           /*  while (i <= y) {
+                n = i % z;
+                if (n == 0) {
+                    output += n + ' ';
+                }
+                i++;
+            } */
+	        //OUTPUT - output all even divisors only
+	        document.getElementById('output').innerHTML = n
+        }
+  </script>
+  </body>
+</html>

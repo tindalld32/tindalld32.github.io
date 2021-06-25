@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>CIT 160 Exam 2 Question 1</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Exam 2 Question 1</h1>
+      <h2>Danny Tindall</h2>
+    </header>
+    <main>
+      <h3>2 Squared values</h3>
+      <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; Danny Tindall &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function twoSquared() {
+            //Input - no input needed from user
+            let i = 0
+            let output = ""
+            
+            //Processing using repetition loop
+            while (i < 31) {
+              square = Math.pow(2, i);
+              output += square + ', ';
+              i++;
+            }
+            if (i == 31) {
+              square = Math.pow(2, i);
+              output += square;
+              i++;
+            }
+
+            //Output - 2 squared from 0 to 31
+            document.getElementById("output").innerHTML = output
+        }
+
+        window.onload = twoSquared()
+    </script>
+  </body>
+</html>
