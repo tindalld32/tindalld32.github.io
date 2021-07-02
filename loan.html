@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Loan Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Week 11: Loan Calculator</h1>
+      <h2>Danny Tindall</h2>
+    </header>
+    <main>
+      <h3>Loan Calculator</h3>
+      <label>Amount Borrowed (principal): <input type="text" id="principal"></label>
+      <label>Annual Interest Rate (example: .065): <input type="text" id="annualRate"></label>
+      <label>Number of Years: <input type="text" id="years"></label>
+      <label>Payments per Year: <input type="text" id="paymentsPerYear"></label>
+      <label><button onclick="doPayment()">Payment</button></label>
+      <p><span id="paymentOutput"></span></p>
+      <label>Number of Payments Made: <input type="text" id="paymentsMade"></label>
+      <label><button onclick="doBalance()">Compute Balance (payoff amount)</button></label>
+      <hr>
+      <p><span id="balanceOutput"></span></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; Danny Tindall &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function computePayment (principal, annualRate, years, paymentsPerYear) {
+            //Formula is p = (a*r)/(1 - (1 + r)^^-n)
+            return p = (principal * (annualRate / paymentsPerYear)) / (1 - Math.pow(1 + (annualRate / paymentsPerYear), -(paymentsPerYear * years)));
+        }
+        function computeBalance (principal, annualRate, years, paymentsPerYear, numberOfPaymentsPaidToDate) {
+            return b = principal * (Math.pow(1 + (annualRate / paymentsPerYear), numberOfPaymentsPaidToDate,)) - (computePayment(principal, annualRate, years, paymentsPerYear) * (Math.pow(1 + (annualRate / paymentsPerYear), numberOfPaymentsPaidToDate) - 1) / (annualRate / paymentsPerYear));
+        }
+
+        function doPayment() {
+            //Input - data gathered from user
+            let principal = parseFloat(document.getElementById("principal").value)
+            let annualRate = parseFloat(document.getElementById("annualRate").value)
+            let years = parseFloat(document.getElementById("years").value)
+            let paymentsPY = parseFloat(document.getElementById("paymentsPerYear").value)
+
+            //Processing - call computePayment function
+            pay = computePayment(principal, annualRate, years, paymentsPY);
+
+            //Output
+            document.getElementById("paymentOutput").innerHTML = `$${pay.toFixed(2)}`
+
+        }
+
+        function doBalance() {
+            //Input - data gathered from user
+            let principal = parseFloat(document.getElementById("principal").value)
+            let annualRate = parseFloat(document.getElementById("annualRate").value)
+            let years = parseFloat(document.getElementById("years").value)
+            let paymentsPerYear = parseFloat(document.getElementById("paymentsPerYear").value)
+            let paymentsMade = parseFloat(document.getElementById("paymentsMade").value)
+
+            //Processing - call computeBalance function
+            bal = computeBalance(principal, annualRate, years, paymentsPerYear, paymentsMade);
+
+            //Output
+            document.getElementById("balanceOutput").innerHTML = `$${bal.toFixed(2)}`
+        }
+    </script>
+  </body>
+</html>

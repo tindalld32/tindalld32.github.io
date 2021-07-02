@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Investment Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Week 11: Investment Calculator</h1>
+      <h2>Danny Tindall</h2>
+    </header>
+    <main>
+      <h3>Computing Future Value</h3>
+      <label>Amount Invested (principal): <input type="text" id="principal"></label>
+      <label>Annual Rate (example: .08): <input type="text" id="annualRate"></label>
+      <label>Number of Years: <input type="text" id="years"></label>
+      <label>Periods per Year: <input type="text" id="periods"></label>
+      <label><button onclick="doFV()">Start the Program</button></label>
+      <hr>
+      <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; Danny Tindall &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function computeFutureValue (principal, annualRate, years, periodsPerYear) {
+          //formula is f = a (1 + r)^^n - per period rate is .0175 (.07 / 4)
+          return futureValue = (principal * Math.pow(1 + (annualRate / periodsPerYear), (years * periodsPerYear))).toFixed(2);
+        
+        }
+
+        function doFV() {
+            //Input - set variables for the values provided by user
+            let principal = parseFloat(document.getElementById("principal").value)
+            let annualRate = parseFloat(document.getElementById("annualRate").value)
+            let years = parseFloat(document.getElementById("years").value)
+            let periodsPY = parseFloat(document.getElementById("periods").value)
+
+            //Processing - call the computeFutureValue function
+            fv = computeFutureValue (principal, annualRate, years, periodsPY);
+
+            //Output - display future value for user
+            document.getElementById("output").innerHTML = fv
+
+        }
+
+
+    </script>
+  </body>
+</html>
